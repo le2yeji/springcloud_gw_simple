@@ -1,11 +1,20 @@
 spring:
   application:
     name: springcloud_gw_simple
+  cloud:
+    gateway:
+      httpclient:
+        wiretap: true
   profiles:
-    active: local
+    active: dev
   banner:
     location: "classpath:config/app-banner.txt"
 app-info:
   build:
     version: '@project.version@'
     timestamp: '@app.build.timestamp@'
+
+jwt:
+  token-expiration-seconds: 1800
+  secret-key: CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228
+  private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMrUv558NK116qYyBimbAjg4nVzBmlzUug1OnRK7x4PYvGxB940cDmooxG0y8G0MIOuB+YPj7Wr+B+qCcQigH9eQyFTjb5bM4r5ucj+VTo4m441LFlLYDEvgci7ozgQBOFe+PoCTOezex89009bKqAQU3Nmeg2bZcSZHeZ97xMjdAgMBAAECgYEAtkS6sWPyPpKBO7omWYsHUphlqO39lkA/tSeY9TWzk+LXZ/1bxP2aYoGiCnNFJOlKR/hzzbasKoJ/gJiZlOO31/iGtDqen6h78xvYLv1NiUOAirSR3ves1ygL/BPCVO1m2wyk1q+RpU+WojW7++norR7QC/c2jlnwQr1WnEtv50ECQQDpOidWJjdKTVz2pUpGRsy03Rh7tMbYAr2qoVwHm6O8b3M2wuWkx2zqXR5u0MHdxAGJTDPxxmSn8CRs4KLOCXgxAkEA3qLM7+IENUJB443G+kpKaSDGkd7RHyPWX39I4X2XW5FOro/IK/48FgtbXewWneNd0YyBbNQTLuFPIlzji3tcbQJAO0x86euHjU3EQDXgf6PKsoWwjut0z0FLJhImywxogiW4HolJSC8oYyJP9Y8Aa7lFRrpoTqXJu+VT7Zbj7gz8UQJAOWMjik3rIcNTcpFwEcImjhSpup4Br5IwRutrYNxbsHmzG2HqihR9bn087ufVKJub6lDaZ6/+xd3D5SqmaKTCvQJBANXsyRxddnPKC7CfPjXWBRwY+S6byJSOdvWVTqf4ypKRE6q3NsbeRtJRaWOm1eHASwZyhyJTfgt835rIQRbiRw0=

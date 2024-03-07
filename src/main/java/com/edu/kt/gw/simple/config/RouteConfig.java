@@ -1,5 +1,6 @@
 package com.edu.kt.gw.simple.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ public class RouteConfig {
 
     @Bean
     public RouteLocator msRoute(RouteLocatorBuilder builder) {
+
 
         return builder.routes()
                 .route("command-service", r -> r.path("/**")

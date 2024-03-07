@@ -14,7 +14,6 @@ management:
     gateway:
       enabled: true
 
-
 spring:
   cloud:
     gateway:
