@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: command-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/**
+            - Method=POST
+          filters:
+            - RewritePath=/(?<path>.*),/$\{path}
+        - id: query-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/**
+            - Method=GET
+          filters:
+            - RewritePath=/(?<path>.*),/$\{path}
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+    reactor.netty: debug
+    com.kt: trace
