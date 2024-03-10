@@ -21,9 +21,10 @@ public class LoginController {
 
     @PostMapping("/api/login")
     Mono<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+        System.out.println("Aaaaaaaaaaaaaaaaaaaaaaaaaaaa" + loginRequest);
         return decryptService.login(loginRequest.password())
                 .flatMap(decryptedPassword -> userDetailsService.findByUsername(loginRequest.username())
-                        .filter(user -> passwordEncoder.matches(decryptedPassword, user.getPassword()))
+                        .filter(u -> passwordEncoder.matches(decryptedPassword, u.getPassword()))
                         .map(tokenProvider::generateToken)
                         .map(LoginResponse::new)
                         .switchIfEmpty(Mono.error(new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid credentials"))));

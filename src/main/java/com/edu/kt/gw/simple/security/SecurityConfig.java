@@ -29,7 +29,7 @@ class SecurityConfig {
                 )
                 .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
-                .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
+//                .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .cors(ServerHttpSecurity.CorsSpec::disable)
                 .build();

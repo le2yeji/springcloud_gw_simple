@@ -74,6 +74,11 @@
 			<version>0.12.3</version>
 			<scope>runtime</scope>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.projectreactor</groupId>-->
+<!--			<artifactId>reactor-core</artifactId>-->
+<!--			<version>3.4.11</version> &lt;!&ndash; 원하는 Reactor 버전으로 변경 &ndash;&gt;-->
+<!--		</dependency>-->
        <!-- M1 맥북에 추가 -->
 <!--		<dependency>-->
 <!--			<groupId>io.netty</groupId>-->
